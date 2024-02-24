@@ -1,17 +1,18 @@
+'use client';
 import React from 'react'
 
 type ButtonProps = {
     name: string;
-    onClick: Function;
+    onClick: (params:any) => void;
 }
 
-const CustumButtons = ({name}:ButtonProps, {onClick}:ButtonProps) => {
+const CustumButtons = (args: ButtonProps) => {
     return (
         <div
             className='btn'
-            onClick={() => onClick}
+            onClick={args.onClick}
          >
-            {name}
+            {args.name}
         </div>
     )
 }
